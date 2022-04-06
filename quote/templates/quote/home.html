@@ -1,0 +1,23 @@
+{% extends 'quote/base.html' %}
+{% block content %}
+
+    <div class="container">
+        <blockquote class="quote-box">
+            <p class="quotation-mark">
+                “
+            </p>
+            <p class="quote-text">
+                {{content}}
+            </p>
+            <hr>
+            <div class="blog-post-actions">
+                <p class="blog-post-bottom pull-left">
+                    {{ originator }}
+                </p>
+                
+            </div>
+        </blockquote>
+    </div>
+
+{% endblock content %}
+

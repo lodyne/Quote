@@ -33,25 +33,28 @@
         </a>
     </div> {% endcomment %}
     
-    {% for key,value in data.items %}
         <div class="container">
-            <blockquote class="quote-box">
-                <p class="quotation-mark">
-                    “
-                </p>
-                <p class="quote-text">
-                    {{ item.content }}
-                </p>
-                <hr>
-                <div class="blog-post-actions">
-                    <p class="blog-post-bottom pull-left">
-                        {{ item.originator }}
-                    </p>
-                    
-                </div> 
-            </blockquote>
+            <div class="row justify-content-center align-content-center">
+                <blockquote class="quote-box">
+                    {% for key,value in data.items %}
+                        <p class="quotation-mark">
+                            “
+                        </p>
+                        <p class="quote-text">
+                            {{ item.content }}
+                        </p>
+                        <hr>
+                        <div class="originator">
+                            <p>
+                                {{ item.originator }}
+                            </p>
+                            
+                        </div> 
+                    {% endfor %}  
+                </blockquote>
+            </div>
         </div>
-    {% endfor %}  
+
 
     {% comment %} {% for res in data %}
             <div class="card">
@@ -65,7 +68,7 @@
     {% endfor %}   {% endcomment %}
                 
 
-    <div class="container">
+    {% comment %} <div class="container">
         <blockquote class="quote-box">
             <p class="quotation-mark">
                 “
@@ -81,7 +84,7 @@
                 
             </div>
         </blockquote>
-    </div>
+    </div> {% endcomment %}
 
 {% endblock content %}
 

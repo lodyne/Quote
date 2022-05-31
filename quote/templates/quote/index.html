@@ -2,7 +2,7 @@
 
 {% block content %}
     
-        <div class="container mt-5">
+        {% comment %} <div class="container mt-5">
             <div class="row d-flex justify-content-center">
                 <div class = "col-lg-6 col-md-6">
                 {% for res in data %}
@@ -14,9 +14,28 @@
                             </blockquote>
                         </div>
                     </div>   
-                    {% endfor %} 
+                {% endfor %} 
                 </div>
-        </div>
+        </div> {% endcomment %}
+        <table class=" container table" id="table_id"> 
+            <thead>
+                <tr>
+                    <th>Quote</th>
+                    <th>Author</th>
+                    
+                </tr>
+            </thead>
+            {% for data in data %}
+                <tbody>
+                    <tr>
+                    
+                        <td>{{ data.quote}}</</td>
+                        <td>{{ data.author}}</td>
+                    </tr>
+            
+                </tbody>
+            {% endfor %}
+        </table>
     
     </div>
     {% comment %} <div class="card">

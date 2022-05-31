@@ -1,10 +1,12 @@
 from multiprocessing import context
+from django_tables2 import SingleTableView
 import requests
 from urllib import request
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from quote.models import Quote
+from quote.tables import MyTable
 
 
 # Create your views here.
@@ -59,3 +61,8 @@ def another1(request):
     }
 
     return render(request,'quote/another1.html',data)
+
+class TableView(SingleTableView):
+    model = Quote
+    table_class = MyTable
+    template_name = 'quote/table.html'

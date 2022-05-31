@@ -1,7 +1,7 @@
 {% extends 'quote/base.html' %}
 
 {% block content %}
-    <div class="container mt-5">
+    {% comment %} <div class="container mt-5">
         <h1>LOOKUP DICTIONARY USING KEY,VALUE</h1>
         {% for key,value in data.items  %}
             <h3> {{key}} : {{value}} </h3>
@@ -13,12 +13,30 @@
         <h3>Career: {{ data.career }}</h3>
 
         <h1>LOOKUP METHOD USING DOT OPERATOR</h1>
-        {% comment %} title() and upper() are string methods  {% endcomment %}
+        title() and upper() are string methods 
         <h3>Name: {{ data.name.title}} </h3>
         <h3>Age: {{ data.age }}</h3>
         <h3>Career: {{ data.career.upper }}</h3>
     
-    </div>
-
+    </div> {% endcomment %}
+    <table class=" container table" id="table_id"> 
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Age</th>
+                <th>Career</th>
+            </tr>
+        </thead>
+        {% for data in data %}
+            <tbody>
+                <tr>
+                    <td scope="row">{{ data.name.title}} </td>
+                    <td>{{ data.age }}</</td>
+                    <td>{{ data.career}}</td>
+                </tr>
+        
+            </tbody>
+        {% endfor %}
+    </table>
 {% endblock content %}
     
